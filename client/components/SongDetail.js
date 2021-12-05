@@ -3,12 +3,12 @@ import { Link } from 'react-router';
 import { graphql } from 'react-apollo';
 
 import LyricCreate from './LyricCreate';
+import LyricList from './LyricList';
 import fetchSong from '../queries/fetchSong';
 
 class SongDetail extends Component {
   render() {
     const { song } = this.props.data;
-    console.log(song);
 
     if (!song) {
       return <div>Loading...</div>;
@@ -18,6 +18,7 @@ class SongDetail extends Component {
       <div>
         <Link to="/">Back</Link>
         <h3>{song.title}</h3>
+        <LyricList lyrics={song.lyrics} />
         <LyricCreate songId={this.props.params.id} />
       </div>
     );

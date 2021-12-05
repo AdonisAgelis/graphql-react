@@ -30,7 +30,7 @@ class SongCreate extends Component {
         <Link to="/">Back</Link>
         <h3>Create a new Song</h3>
         <form onSubmit={this.onSubmit.bind(this)}>
-          <label htmlFor="">Song Title</label>
+          <label>Song Title</label>
           <input
             onChange={event => this.setState({ title: event.target.value })}
             value={this.state.value}
